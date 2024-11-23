@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/Home.css";
-// import "../libs/gsap/ScrollSmoother.min"
-// import "../libs/gsap/ScrollTrigger.min"
-// import "../libs/gsap/gsap.min"
 
 const Home = () => {
 	window.addEventListener('scroll', e => {
-		document.documentElement.style.setProperty('--scrollTop', `${this.scrollY}px`) // Update method
-	})
+		document.querySelector('html').style.cssText = `--scrollTop: ${window.scrollY}px`;
+	});
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 	ScrollSmoother.create({
 		wrapper: '.wrapper',
