@@ -1,50 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React</title>
 
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>Document</title>
-
-	<link rel="stylesheet" href="css/main.css">
-
-	<script src="libs/gsap/gsap.min.js" defer></script>
-	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
-	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
-
-	<script src="js/app.js" defer></script>
-
+  <script src="./libs/gsap/gsap.min.js" defer></script>
+  <script src="./libs/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="./libs/gsap/ScrollTrigger.min.js" defer></script>
 </head>
+
 <body>
-
-	<div class="wrapper">
-		<div class="content">
-
-			<header class="main-header">
-				<div class="layers">
-					<div class="layer__header">
-						<div class="layers__caption">test platform</div>
-						<div class="layers__title">Horizon</div>
-					</div>
-					<div class="layer layers__base" style="background-image: url(assets/layer-base.png);"></div>
-					<div class="layer layers__middle" style="background-image: url(assets/layer-middle.png);"></div>
-					<div class="layer layers__front" style="background-image: url(assets/layer-front.png);"></div>
-				</div>
-			</header>
-		
-			<article class="main-article" style="background-image: url(assets/dungeon.png);">
-				<div class="main-article__content">
-					<h2 class="main-article__header">Rules</h2>
-					<p class="main-article__paragraph">During the test, all keys are disabled; attempting to 
-            minimize or close the window will result in the test being terminated.</p>
-				</div>
-				<button class="startButton">Start</button>
-			</article>
-
-		</div>
-	</div>
-
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
+
 </html>
