@@ -133,9 +133,9 @@ body {
   font-size: calc(var(--index) * 0.9);
   color: #ffffff !important;
   padding: 30px 100px;
-  border: 10px solid #383839;
   border-radius: 30px; 
   background: #48489b;
+  box-shadow: 0 0 15px #8b8383;
   user-select: none;
   max-width: calc(var(--index) * 30);
   margin-top: calc(var(--index) * 17);
@@ -144,4 +144,9 @@ body {
   will-change: transform;
   margin: 0px 20px 0px 0px;
   text-decoration: none;
+  transition: all 0.2s linear 0s;
+}
+
+.startButton:hover {
+	background: #383880;
 }
