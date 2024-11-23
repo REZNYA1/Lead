@@ -22,19 +22,22 @@ const Home = () => {
 							<div className="layers__caption">test platform</div>
 							<div className="layers__title">Horizon</div>
 						</div>
-						<div className="layer layers__base" style={{backgroundImage: "url('./images/layer-base.png')"}}></div>
-						<div className="layer layers__middle" style={{backgroundImage: "url('./images/layer-middle.png')"}}></div>
-						<div className="layer layers__front" style={{backgroundImage: "url('./images/layer-front.png')"}}></div>
+						<div className="layer layers__base" style={{ backgroundImage: "url('./images/layer-base.png')" }}></div>
+						<div className="layer layers__middle" style={{ backgroundImage: "url('./images/layer-middle.png')" }}></div>
+						<div className="layer layers__front" style={{ backgroundImage: "url('./images/layer-front.png')" }}></div>
 					</div>
 				</header>
 
-				<article className="main-article" style={{backgroundImage: "url('./images/dungeon.png')"}}>
+				<article className="main-article" style={{ backgroundImage: "url('./images/dungeon.png')" }}>
 					<div className="main-article__content">
 						<h2 className="main-article__header">Rules</h2>
 						<p className="main-article__paragraph">During the test, all keys are disabled; attempting to
 							minimize or close the window will result in the test being terminated.</p>
 					</div>
-					<button className="startButton">Start</button>
+					<div className="main-article__buttons">
+						<Link to="/teacher" className="startButton">Teacher</Link>
+						<Link to="/teacher" className="startButton">Student</Link>
+					</div>
 				</article>
 
 			</div>

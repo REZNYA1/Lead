@@ -98,6 +98,7 @@ body {
 	align-items: center;
 	position: relative;
 	text-align: center;
+	flex-direction: column;
 	/* Update: */
 	top: -1px;
 	z-index: 10;
@@ -128,7 +129,6 @@ body {
 	will-change: transform;
 }
 .startButton {
-  position: absolute;
   font-family: 'Raleway', sans-serif;
   font-size: calc(var(--index) * 0.9);
   color: #ffffff !important;
@@ -142,4 +142,6 @@ body {
   transform: var(--main-article-transform);
   transition: var(--transition);
   will-change: transform;
+  margin: 0px 20px 0px 0px;
+  text-decoration: none;
 }
