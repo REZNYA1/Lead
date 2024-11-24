@@ -26,7 +26,7 @@ const Home = () => {
 					<div className="layers">
 						<div className="layer__header">
 							<div className="layers__caption">test platform</div>
-							<div className="layers__title">Horizon</div>
+							<div className="layers__title">Lead</div>
 						</div>
 						<div className="layer layers__base" style={{ backgroundImage: "url('./images/layer-base.png')" }}></div>
 						<div className="layer layers__middle" style={{ backgroundImage: "url('./images/layer-middle.png')" }}></div>
