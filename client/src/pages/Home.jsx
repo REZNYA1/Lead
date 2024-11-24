@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/Home.css";
 
@@ -7,15 +7,21 @@ const Home = () => {
 		document.querySelector('html').style.cssText = `--scrollTop: ${window.scrollY}px`;
 	});
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-	ScrollSmoother.create({
+
+	const smoother = ScrollSmoother.create({
 		wrapper: '.wrapper',
 		content: '.content'
 	})
 
+	const handleClick = () => {
+		smoother = ScrollSmoother.get();
+		smoother.kill();
+		smoother = null;
+	};
+
 	return (
 		<div className="wrapper">
 			<div className="content">
-
 				<header className="main-header">
 					<div className="layers">
 						<div className="layer__header">
@@ -35,11 +41,10 @@ const Home = () => {
 							minimize or close the window will result in the test being terminated.</p>
 					</div>
 					<div className="main-article__buttons">
-						<Link to="/teacher" className="startButton">Teacher</Link>
-						<Link to="/teacher" className="startButton">Student</Link>
+						<Link onClick={handleClick} to="/teacher" className="startButton">Teacher</Link>
+						<Link onClick={handleClick} to="/tests" className="startButton">Student</Link>
 					</div>
 				</article>
-
 			</div>
 		</div>
 	);
