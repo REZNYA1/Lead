@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import "../styles/Home.css";
+import "./Home.css";
+import LayerBase from "./image/layer-base.png"
+import LayerMiddle from "./image/layer-middle.png"
+import LayerFront from "./image/layer-front.png"
+import dungeon from "./image/dungeon.png"
+
 
 const Home = () => {
 	window.addEventListener('scroll', e => {
@@ -28,13 +33,25 @@ const Home = () => {
 							<div className="layers__caption">test platform</div>
 							<div className="layers__title">Lead</div>
 						</div>
-						<div className="layer layers__base" style={{ backgroundImage: "url('./images/layer-base.png')" }}></div>
-						<div className="layer layers__middle" style={{ backgroundImage: "url('./images/layer-middle.png')" }}></div>
-						<div className="layer layers__front" style={{ backgroundImage: "url('./images/layer-front.png')" }}></div>
+						<div 
+						className="layer layers__base" 
+						style={{ backgroundImage: `url(${LayerBase})` }}
+						></div>
+
+						<div 
+						className="layer layers__middle" 
+						style={{ backgroundImage: `url(${LayerMiddle})` }}
+						></div>
+						<div 
+						className="layer layers__front" 
+						style={{ backgroundImage: `url(${LayerFront})` }}
+						></div>
 					</div>
 				</header>
 
-				<article className="main-article" style={{ backgroundImage: "url('./images/dungeon.png')" }}>
+				<article className="main-article"
+								 style={{ backgroundImage: `url(${dungeon})` }}>
+
 					<div className="main-article__content">
 						<h2 className="main-article__header">Rules</h2>
 						<p className="main-article__paragraph">During the test, all keys are disabled; attempting to
@@ -44,6 +61,7 @@ const Home = () => {
 						<Link onClick={handleClick} to="/teacher" className="startButton">Teacher</Link>
 						<Link onClick={handleClick} to="/tests" className="startButton">Student</Link>
 					</div>
+
 				</article>
 			</div>
 		</div>

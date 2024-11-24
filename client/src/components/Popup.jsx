@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Popup.css";
+import "./Popup";
 
 const Popup = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;

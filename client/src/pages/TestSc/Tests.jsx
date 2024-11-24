@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "../styles/Tests.css";
-import Popup from '../components/popup';
+import "./Tests.css";
+import Popup from '../../components/Popup';
 
 const Tests = () => {
 

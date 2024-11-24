@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './pages/home'
-import Tests from './pages/Tests'
-import TeacherPage from './pages/TeacherPage'
-import Test from './pages/Test'
+import Home from './pages/HomeSc/Home'
+import Tests from './pages/TestSc/Tests'
+import Test from './pages/TestSc/Test'
+import TeacherPage from './pages/TeacherSc/TeacherPage'
+
 
 const router = createBrowserRouter([
   {
