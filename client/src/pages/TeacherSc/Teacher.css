@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'intro'; 
+  src: url('../mainFonts/intro.woff2') format('woff2'), /* Современный формат */
+       url('../mainFonts/intro.woff') format('woff');   /* Резервный формат */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Основной контейнер */
+.container {
+  display: flex;  /* Используем Flexbox для разделения экрана */
+  height: 100vh;  /* Высота экрана */
+  width: 100vw;   /* Ширина экрана */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Для того чтобы карточки могли переноситься */
+    gap: 20px; /* Расстояние между карточками */
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.card {
+   background-color: #333;
+   padding: 20px;
+   width: 250px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .card label {
+   display: block;
+   margin-bottom: 10px;
+   font-size: 1.2rem;
+   color: #5cb57b; /* Зеленый цвет для лейблов */
+ }
+ 
+ .card p {
+   font-size: 1rem;
+   color: #ddd;
+ }
+
+/* Левая часть */
+.left {
+  width: 20%; /* Занимает 20% ширины */
+  height: 100%; /* Занимает всю высоту */
+  border-right: 2px solid #5171b6;
+  display: flex;
+  flex-direction: column; /* Выравниваем кнопки по вертикали */
+  justify-content: center; 
+  align-items: center;     /* Центрируем по горизонтали */
+  background-color: #252d35; /* Темный фон для контраста */
+}
+
+/* Кнопки */
+.button {
+  font-family: 'intro', sans-serif;
+  font-size: 16px; /* Установим фиксированный размер шрифта */
+  padding: 20px 40px;
+  color: #252d35;   
+  background: #48489b;
+  border: 2px solid #48489b;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  text-decoration: none; /* Убираем подчеркивание для Link */
+  margin: 20px 0; /* Устанавливаем отступы между кнопками */
+  display: inline-block; /* Сделаем кнопку блочным элементом */
+  width: 200px; /* Ширина кнопки */
+  text-align: center; /* Текст по центру */
+}
+
+.button:hover {
+  background-color: #252d35;   /* Цвет фона при наведении */
+  border: 2px solid #5171b6;   /* Цвет границы при наведении */
+  color: #5171b6;              /* Цвет текста при наведении */
+}
+
+
+/* Правая часть */
+.right {
+  width: 80%;  /* Занимает 80% ширины */
+  padding: 20px;
+  background: #181d22;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Занимает всю высоту */
+}
+
