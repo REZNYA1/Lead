@@ -53,6 +53,26 @@
   background-color: #252d35; /* Темный фон для контраста */
 }
 
+.download {
+    font-family: 'intro', sans-serif;
+    font-size: 16px; /* Установим фиксированный размер шрифта */
+    padding: 20px 40px;
+    color: #252d35;   
+    background: #0fd191;
+    border: 2px solid #252d35;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    width: 200px;
+    text-align: center; /* Текст по центру */
+
+}
+
+.download:hover {
+  background-color: #252d35;   /* Цвет фона при наведении */
+  border: 2px solid #0fd191;   /* Цвет границы при наведении */
+  color: #252d35;              /* Цвет текста при наведении */
+}
+
 /* Кнопки */
 .button {
   font-family: 'intro', sans-serif;

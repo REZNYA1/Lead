@@ -3,15 +3,15 @@ import './Teacher.css';
 
 function TeacherPage() {
   const [data, setData] = useState(null); // Состояние для данных
+  const [view, setView] = useState('test'); // Состояние для переключения между видами
 
   useEffect(() => {
-    // Функция для запроса данных с бэкенда
     const fetchData = async () => {
       try {
         const response = await fetch('http://localhost:5000/server/ai');
         if (response.ok) {
           const result = await response.json();
-          setData(result); // Сохраняем полученные данные
+          setData(result);
         } else {
           console.error('Error, data');
         }
@@ -23,40 +23,56 @@ function TeacherPage() {
     fetchData();
   }, []);
 
-  const handleClick = () => {
-    // Обработчик событий
-    console.log('Кнопка нажата');
-  };
-
   return (
     <div className="container">
       {/* Левая часть (20% ширины и вся высота) */}
       <div className="left">
-        <button onClick={handleClick} className="button">Curent test</button>
-        <button onClick={handleClick} className="button">Info</button>
+        <button onClick={() => setView('test')} className="button">Current test</button>
+        <button onClick={() => setView('info')} className="button">Info</button>
       </div>
 
       {/* Правая часть (80% ширины) */}
       <div className="right">
-        <div className="cards">
-          {/* Карточка 1 */}
-          <div className="card">
-            <label>member</label>
-            <p>{data ? data.message : 'Louding...'}</p>
-          </div>
+        {view === 'test' ? (
+          <div className="cards">
+            
+            <div className="card">
+              <label>member</label>
+              <p>{data ? data.member: 'Loading...'}</p>
+            </div>
 
-          {/* Карточка 2 */}
-          <div className="card">
-            <label>test name</label>
-            <p>{data ? data.message : 'Louding...'}</p>
-          </div>
+           
+            <div className="card">
+              <label>test name</label>
+              <p>{data ? data.name : 'Loading...'}</p>
+            </div>
 
-          {/* Карточка 3 */}
-          <div className="card">
-            <label>time</label>
-            <p>{data ? data.message : 'Louding...'}</p>
+            <div className="card">
+              <label>time</label>
+              <p>{data ? data.time : 'Loading...'}</p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="info-view">
+            <div className="cards">
+          
+            <div className="card">
+              <label>member</label>
+              <p>{data ? data.message : 'Loading...'}</p>
+            </div>
+
+         
+            <div className="card">
+              <label>test name</label>
+              <p>{data ? data.message : 'Loading...'}</p>
+            </div>
+            <button  className="button">download info</button>
+
+            
+           
+          </div>
+          </div>
+        )}
       </div>
     </div>
   );
