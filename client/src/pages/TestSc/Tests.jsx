@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Tests.css";
-import Popup from '../../components/Popup';
+import Popup from '../../components/Popup/Popup';
 
 const Tests = () => {
 
 	const tests = [
-		{ key: 1, name: "What is Big O? Algorithm Analysis.", author: "Maksym Ivanov", questions: 5, time: 12, active: true },
-		{ key: 2, name: "Artificial Intelligence.", author: "Artem Starykov", questions: 12, time: 45, active: true }
+		{ key: 1, name: "What is Big O? Algorithm Analysis.", author: "Maksym Ivanov", questions: 3, time: 3, active: true },
+		{ key: 2, name: "Artificial Intelligence.", author: "Artem Starykov", questions: 3, time: 5, active: true }
 	]
 
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
 	const [currentKey, setCurrentKey] = useState(1);
+	const [username, setUsername] = useState(null);
 
 	const openPopup = (e) => {
 		e.stopPropagation()
@@ -20,10 +21,8 @@ const Tests = () => {
 
 		if (!e.target.classList.contains("preview-test")) {
 			key = e.target.closest('.preview-test').dataset.key
-			console.log(key);
 		} else {
 			key = e.target.dataset.key
-			console.log(key);
 
 		}
 		setCurrentKey(key);
@@ -34,8 +33,26 @@ const Tests = () => {
 	}
 	const closePopup = () => setIsPopupOpen(false);
 
+	function goFullscreen() {
+		const element = document.documentElement;
+		if (element.requestFullscreen) {
+			element.requestFullscreen();
+		} else if (element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+		} else if (element.webkitRequestFullscreen) {
+			element.webkitRequestFullscreen();
+		} else if (element.msRequestFullscreen) {
+			element.msRequestFullscreen();
+		}
+	}
+
+	function fullScreen() {
+		goFullscreen();
+		navigator.keyboard.lock();
+	}
+
 	return (
-		<div className='wrapper'>
+		<div className='wrapper _test'>
 			<header className='header'>
 				<div className="header__container">
 					<h1 className='header__title'>Test Platform</h1>
@@ -69,9 +86,10 @@ const Tests = () => {
 			</main>
 			<Popup isOpen={isPopupOpen} onClose={closePopup}>
 				<div className="popup__title">The test will take <span className='_colored'>{time}</span> minutes, <span className='_warning'>you will not be able to minimize page or leave fullscreen mode!</span></div>
+				<input placeholder='Type your name' onChange={e => setUsername(e.target.value)} value={username}  className='popup__input' type="text" />
 				<div className="popup__buttons">
 					<button className="popup__cancel _btn" onClick={closePopup}>Cancel</button>
-					<button className="popup__start _btn" onClick={closePopup}><Link className='popup__link' to={`/test/${currentKey}`}>Start</Link></button>
+					<button className="popup__start _btn" onClick={fullScreen}><Link className='popup__link' to={`/test/${currentKey}`}>Start</Link></button>
 				</div>
 			</Popup>
 		</div>

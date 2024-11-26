@@ -61,7 +61,6 @@ const Home = () => {
 						<Link onClick={handleClick} to="/teacher" className="startButton">Teacher</Link>
 						<Link onClick={handleClick} to="/tests" className="startButton">Student</Link>
 					</div>
-
 				</article>
 			</div>
 		</div>

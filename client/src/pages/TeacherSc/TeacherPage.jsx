@@ -35,13 +35,13 @@ function TeacherPage() {
       <div className="right">
         {view === 'test' ? (
           <div className="cards">
-            
+
             <div className="card">
               <label>member</label>
-              <p>{data ? data.member: 'Loading...'}</p>
+              <p>{data ? data.member : 'Loading...'}</p>
             </div>
 
-           
+
             <div className="card">
               <label>test name</label>
               <p>{data ? data.name : 'Loading...'}</p>
@@ -55,22 +55,19 @@ function TeacherPage() {
         ) : (
           <div className="info-view">
             <div className="cards">
-          
-            <div className="card">
-              <label>member</label>
-              <p>{data ? data.message : 'Loading...'}</p>
-            </div>
 
-         
-            <div className="card">
-              <label>test name</label>
-              <p>{data ? data.message : 'Loading...'}</p>
-            </div>
-            <button  className="button">download info</button>
+              <div className="card">
+                <label>member</label>
+                <p>{data ? data.member : 'Loading...'}</p>
+              </div>
 
-            
-           
-          </div>
+
+              <div className="card">
+                <label>test name</label>
+                <p>{data ? data.name : 'Loading...'}</p>
+              </div>
+              <button className="button">download info</button>
+            </div>
           </div>
         )}
       </div>

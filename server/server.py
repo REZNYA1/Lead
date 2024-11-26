@@ -17,7 +17,7 @@ load_dotenv()
 db_password = os.getenv('DB_API')
 
 # Ключ
-client = OpenAI(api_key=db_password)
+client = OpenAI(api_key="")
 
 
 # Эндпоинт для получения данных (GET-запрос)
