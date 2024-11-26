@@ -17,7 +17,7 @@ load_dotenv()
 db_password = os.getenv('DB_API')
 
 # Ключ
-client = OpenAI(api_key=db_password)
+client = OpenAI(api_key="")
 
 
 # Эндпоинт для получения данных (GET-запрос)
@@ -53,6 +53,20 @@ def ai_data():
         return jsonify({"response": ai_response})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@app.route('/upload_json', methods=['POST'])
+def upload_json():
+    # Получаем JSON с фронтенда
+    data = request.get_json()
+    print(data)
+    # Проверяем, содержит ли JSON нужные ключи
+    required_keys = ['member', 'test', 'time', 'active']
+    if all(key in data for key in required_keys):
+        return jsonify({"message": "JSON received successfully", "data": data}), 200
+    else:
+        return jsonify({"error": "Missing required keys"}), 400
+
 
 if __name__ == '__main__':
     app.run(debug=True)
