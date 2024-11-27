@@ -2,19 +2,17 @@ li, ul {
 	list-style: none;
 }
 
-button {
-	display: none;
-}
-
 body {
-	background-color: #D6E2EB;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	color: #414141;
+	color: #f0f0f0;
 }
 
 .header {
 	background-color: #3B576C;
-	color: #fff;
+}
+
+._test {
+	height: 100vh;
 }
 
 .header__container {
@@ -61,10 +59,11 @@ body {
 .tests__title {
 	font-size: 28px;
 	margin: 0px 0px 40px 0px;
+	color: #f0f0f0;
 }
 
 .preview-test {
-	background-color: #fff;
+	background-color: #f0f0f0;
 	border-radius: 3px;
 	padding: 30px 20px;
 	border-bottom: 5px solid green;
@@ -74,7 +73,6 @@ body {
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
 }
-
 .preview-test:hover {
 	box-shadow: 0 0 16px 9px #9b9b9b73;
 }
@@ -110,4 +108,8 @@ body {
 
 .tests__link {
 	text-decoration: none;
+}
+
+.icon-menu {
+	display: none;
 }

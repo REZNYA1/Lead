@@ -1,0 +1,57 @@
+.timer {
+	font-size: 20px;
+}
+
+.time {
+	font-size: 22px;
+	letter-spacing: 0.5px;
+	display: inline-block;
+	color: #d5ffc1;
+	margin: 0px 0px 0px 5px;
+}
+
+.test__container {
+	max-width: 1200px;
+	padding: 0px 15px;
+	margin: 0 auto;
+}
+
+.test__body {
+	background-color: #333;
+	padding: 80px 20px 30px 20px;
+	max-width: 1000px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	margin: 110px auto 0px auto;
+}
+
+.test__score {
+	margin: 70px 0px 70px 0px;
+	display: block;
+	text-align: center;
+	font-size: 30px;
+	color: #333;
+}
+
+._score {
+	background-color: #f1f1f1;
+	padding: 6px 15px;
+	display: inline-block;
+	margin: 0 auto;
+	border-radius: 6px;
+}
+
+.test__over {
+	text-align: center;
+}
+
+.test__link {
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.test__link:hover {
+	color: rgb(213, 237, 255)
+}
