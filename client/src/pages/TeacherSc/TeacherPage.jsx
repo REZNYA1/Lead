@@ -68,7 +68,6 @@ function TeacherPage() {
         </div>
         <div className="center"> 
           <button onClick={() => setView('General')} className="buttonLeft">General</button>
-          <button onClick={() => setView('Test')} className="buttonLeft">Tests</button>
           <button onClick={() => setView('Ai')} className="buttonLeft">Ai cheack</button>
         </div>
       </div>
@@ -147,7 +146,9 @@ function TeacherPage() {
                 <div class="card-bottom">
                   <label>{data ? data.member : 'No data'}</label>
                 </div>
-                </div>
+                </div> 
+              </div>
+              <div className='memberInfo'>
                 
               </div>
             </div>
@@ -156,11 +157,6 @@ function TeacherPage() {
             </div>
           </div>
         )} 
-        {view === 'Test' && (
-          <div className="Info">
-            
-          </div>
-        )}
         {view === 'Ai' && (
           <div>
             <h1>AI Check View</h1>
