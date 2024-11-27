@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Tests.css";
 import Popup from '../../components/Popup/Popup';
+import { useRef } from 'react';
+import { fullScreen } from '../../utils/fullScreen';
+
 
 const Tests = () => {
 
@@ -13,7 +16,8 @@ const Tests = () => {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 	const [time, setTime] = useState(0);
 	const [currentKey, setCurrentKey] = useState(1);
-	const [username, setUsername] = useState(null);
+	const [username, setUsername] = useState("");
+	const [isntEmpty, setIsntEmpty] = useState(true);
 
 	const openPopup = (e) => {
 		e.stopPropagation()
@@ -33,22 +37,19 @@ const Tests = () => {
 	}
 	const closePopup = () => setIsPopupOpen(false);
 
-	function goFullscreen() {
-		const element = document.documentElement;
-		if (element.requestFullscreen) {
-			element.requestFullscreen();
-		} else if (element.mozRequestFullScreen) {
-			element.mozRequestFullScreen();
-		} else if (element.webkitRequestFullscreen) {
-			element.webkitRequestFullscreen();
-		} else if (element.msRequestFullscreen) {
-			element.msRequestFullscreen();
+	function change(e) {
+		setUsername(e.target.value)
+		if (e.target.value != "") {
+			setIsntEmpty(false)
+			e.target.style.boxShadow = "none";
+		} else {
+			setIsntEmpty(true)
+			e.target.style.boxShadow = "0 0 12px rgba(184, 18, 18, 0.76)";
 		}
 	}
 
-	function fullScreen() {
-		goFullscreen();
-		navigator.keyboard.lock();
+	function addShadow(e) {
+		if (e.target.value == "") e.target.style.boxShadow = "0 0 12px rgba(184, 18, 18, 0.76)"
 	}
 
 	return (
@@ -86,10 +87,13 @@ const Tests = () => {
 			</main>
 			<Popup isOpen={isPopupOpen} onClose={closePopup}>
 				<div className="popup__title">The test will take <span className='_colored'>{time}</span> minutes, <span className='_warning'>you will not be able to minimize page or leave fullscreen mode!</span></div>
-				<input placeholder='Type your name' onChange={e => setUsername(e.target.value)} value={username}  className='popup__input' type="text" />
+				<input required placeholder='Type your name' onBlur={addShadow} onChange={change} value={username} className='popup__input' type="text" />
 				<div className="popup__buttons">
 					<button className="popup__cancel _btn" onClick={closePopup}>Cancel</button>
-					<button className="popup__start _btn" onClick={fullScreen}><Link className='popup__link' to={`/test/${currentKey}`}>Start</Link></button>
+					{isntEmpty
+						? <button className='popup__start _btn popup__link'>Start</button>
+						: <button className="popup__start _btn" onClick={fullScreen}><Link className='popup__link' to={`/test/${currentKey}`}>Start</Link></button>
+					}
 				</div>
 			</Popup>
 		</div>

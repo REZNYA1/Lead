@@ -1,4 +1,5 @@
-li, ul {
+li,
+ul {
 	list-style: none;
 }
 
@@ -73,6 +74,7 @@ body {
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
 }
+
 .preview-test:hover {
 	box-shadow: 0 0 16px 9px #9b9b9b73;
 }
@@ -112,4 +114,22 @@ body {
 
 .icon-menu {
 	display: none;
+}
+
+.test-enter {
+	opacity: 0;
+}
+
+.test-enter-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+}
+
+.test-exit {
+	opacity: 1;
+}
+
+.test-exit-active {
+	opacity: 0;
+	transition: opacity 500ms ease-in;
 }

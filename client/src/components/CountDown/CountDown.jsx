@@ -30,7 +30,6 @@ const CountDown = ({ hours = 0, minutes = 0, seconds = 0, setIsFinished, isFinis
 	});
 
 	useEffect(e => {
-		console.log(isFinished);
 		if (isFinished) {
 			setOver(true);
 		}

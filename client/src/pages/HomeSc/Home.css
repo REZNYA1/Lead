@@ -111,7 +111,6 @@ body {
 }
 
 .main-article__header {
-	text-transform: uppercase;
 	margin-top: calc(var(--index) * 3);
 	font-size: calc(var(--index) * 1.8);
 	letter-spacing: calc(var(--index) / 7.5);

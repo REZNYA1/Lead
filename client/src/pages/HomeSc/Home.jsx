@@ -53,9 +53,7 @@ const Home = () => {
 								 style={{ backgroundImage: `url(${dungeon})` }}>
 
 					<div className="main-article__content">
-						<h2 className="main-article__header">Rules</h2>
-						<p className="main-article__paragraph">During the test, all keys are disabled; attempting to
-							minimize or close the window will result in the test being terminated.</p>
+						<h2 className="main-article__header">Who are you?</h2>
 					</div>
 					<div className="main-article__buttons">
 						<Link onClick={handleClick} to="/teacher" className="startButton">Teacher</Link>
