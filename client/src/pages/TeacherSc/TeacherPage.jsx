@@ -12,7 +12,11 @@ function TeacherPage() {
   const [view, setView] = useState('General'); // Состояние для переключения между видами
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null); // Состояние для ошибок
-  
+  const a1 = "-20";
+  const a2= "160";
+  const a3 = "20";
+  const a4 = "100";
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -80,6 +84,12 @@ function TeacherPage() {
                   <label>General</label>
                 </div>
               </div>
+              <div className='subBox'>
+                <div className='title'>
+                  <label>Here you can find all <br /> 
+                    what you need</label>
+                </div>
+              </div>
               <div className='eventMenu'>
 
               </div>
@@ -89,10 +99,16 @@ function TeacherPage() {
               <div className="DiagramCard">
               
                 <div className="pie-container">
-                    <div className="pie" id="a1"></div>
-                    <div className="pie" id="a2"></div>
-                    <div className="pie" id="a3"></div>
-                    <div className="pie" id="a4"></div>
+                    <div className="pie" id="a1" style={{
+          transform: `rotate(${a2}deg)`,}}></div>
+                    <div className="pie" id="a2" style={{
+
+          transform: `rotate(${a1}deg)`,}}></div>
+                    <div className="pie" id="a3" style={{
+          transform: `rotate(${a3}deg)`,}}></div>
+                    <div className="pie" id="a4" style={{
+
+          transform: `rotate(${a4}deg)`,}}></div>
               
               </div>
                 <div className='bottom'>

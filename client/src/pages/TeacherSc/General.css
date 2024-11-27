@@ -33,16 +33,13 @@
 }
 
 .left .center {
-  width: 20%; 
-  height: 20%;
-  position: absolute;
-  right: 82.5%; 
-  top: 30%;  
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;    /* Центрирование по горизонтали */
+  justify-content: center; /* Центрирование по вертикали */
+  height: 100%;            /* Задаем высоту, чтобы элемент растягивался на всю доступную высоту */
 }
+
 
 .left .top {
   display: flex;
@@ -84,7 +81,7 @@
   height: 20%;
   position: absolute;
   left: 14%; 
-  top: 12%; 
+  top: 40%; 
   transform: translateY(-50%); 
   background-color: #e8dcd0;
   border-radius: 10px;
@@ -98,6 +95,28 @@
 .titleBox .title {
   font-family: 'quer', sans-serif;
   font-size: 70px; 
+  color: #181d22;
+}
+
+.subBox {
+  width: 40%; 
+  height: 20%;
+  position: absolute;
+  left: 6%; 
+  top:60%; 
+  transform: translateY(-50%); 
+  background-color: #e8dcd0;
+  border-radius: 10px;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.subBox .title {
+  font-family: 'quer', sans-serif;
+  font-size: 30px; 
   color: #181d22;
 }
 
@@ -192,7 +211,7 @@
   margin-left: 2.5%;
   width: 95%; 
   height: 75%; 
-  background-color: #ffffff; 
+  background-color: #e8dcd0; 
   padding: 5%; 
   display: flex; 
   border-radius: 10px;
@@ -260,6 +279,7 @@
 /* Левая часть */
 
 .circle {
+  margin-top: 10%;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -275,8 +295,8 @@
   font-size: 16px; 
   padding: 20px 40px;
   color: #252d35;   
-  background: #48489b;
-  border: 2px solid #48489b;
+  background: #e8dcd0;
+  border: 2px solid #252d35;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   user-select: none;
   text-decoration: none; 
@@ -288,6 +308,6 @@
 
 .buttonLeft:hover {
   background-color: #252d35;   
-  border: 2px solid #5171b6;   
-  color: #5171b6;             
+  border: 2px solid #e8dcd0;   
+  color: #e8dcd0;             
 }
