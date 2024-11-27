@@ -7,6 +7,14 @@
 
 ---
 
+
+
+ㅤ ㅤㅤㅤㅤㅤㅤㅤㅤ![Видео без названия — сделано в Clipchamp (2)](https://github.com/user-attachments/assets/8a63a08b-03fa-4757-9a93-d1377f28f2cd)
+
+
+
+
+
 ## 🚀 Working with the Website
 
 Once the application is up and running, you can interact with the various features it offers. Here’s a breakdown of how to use the different sections of the site:
@@ -169,5 +177,5 @@ python server/server.py
 
 ## **🛠️ Technologies**
 - **Frontend**: React, GSAP, Vite.
-- **Backend**: Python, Flask.
+- **Backend**: Python, Flask (or Django).
 - **CSS**: For styling the interface.
